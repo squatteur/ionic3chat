@@ -51,11 +51,11 @@ export class BuddiesPage {
     this.newrequest.sender = firebase.auth().currentUser.uid;
     this.newrequest.recipient = recipient.uid;
     if (this.newrequest.sender === this.newrequest.recipient)
-      alert('You are your friend always');
+      alert('Tu sera toujours ton ami');
     else {
       let successalert = this.alertCtrl.create({
-        title: 'Request sent',
-        subTitle: 'Your request was sent to ' + recipient.displayName,
+        title: 'Requête envoyée',
+        subTitle: 'Votre requête a été envoyé à ' + recipient.displayName,
         buttons: ['ok']
       });
     

@@ -71,7 +71,7 @@ export class GroupchatPage {
 
   sendpicmsg() {
     let loader = this.loadingCtrl.create({
-      content: 'Please wait'
+      content: 'S\'il vous plaît attendez'
     });
     loader.present();
     this.imgstore.picmsgstore().then((imgurl) => {
@@ -91,28 +91,28 @@ export class GroupchatPage {
       title: 'Group Actions',
       buttons: [
         {
-          text: 'Add member',
+          text: 'Ajouter un membre',
           icon: 'person-add',
           handler: () => {
             this.navCtrl.push('GroupbuddiesPage');
           }
         },
         {
-          text: 'Remove member',
+          text: 'Supprimer un membre',
           icon: 'remove-circle',
           handler: () => {
             this.navCtrl.push('GroupmembersPage');
           }
         },
         {
-          text: 'Group Info',
+          text: 'Info du groupe',
           icon: 'person',
           handler: () => {
             this.navCtrl.push('GroupinfoPage', {groupName: this.groupName});
           }
         },
         {
-          text: 'Delete Group',
+          text: 'Suppression du groupe',
           icon: 'trash',
           handler: () => {
             this.groupservice.deletegroup().then(() => {
@@ -123,11 +123,11 @@ export class GroupchatPage {
           }
         },
         {
-          text: 'Cancel',
+          text: 'Annuler',
           role: 'cancel',
           icon: 'cancel',
           handler: () => {
-            console.log('Cancelled');
+            console.log('Annulé');
           }
         }
       ]
@@ -137,10 +137,10 @@ export class GroupchatPage {
 
   presentMemberSheet() {
     let sheet = this.actionSheet.create({
-      title: 'Group Actions',
+      title: 'Actions de groupe',
       buttons: [
         {
-          text: 'Leave Group',
+          text: 'Quitter le groupe',
           icon: 'log-out',
           handler: () => {
             this.groupservice.leavegroup().then(() => {
@@ -151,18 +151,18 @@ export class GroupchatPage {
           }
         },
         {
-          text: 'Group Info',
+          text: 'Info de groupe',
           icon: 'person',
           handler: () => {
             this.navCtrl.push('GroupinfoPage', {groupName: this.groupName});
           }
         },
         {
-          text: 'Cancel',
+          text: 'Annuler',
           role: 'cancel',
           icon: 'cancel',
           handler: () => {
-            console.log('Cancelled');
+            console.log('Annulé');
           }
         }
       ]
