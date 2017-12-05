@@ -28,11 +28,11 @@ export class PasswordresetPage {
     });
     this.userservice.passwordreset(this.email).then((res: any) => {
       if (res.success) {
-        alert.setTitle('Email Sent');
-        alert.setSubTitle('Please follow the instructions in the email to reset your password');
+        alert.setTitle('Email envoyé');
+        alert.setSubTitle('Veuillez suivre les instructions dans l\'email pour réinitialiser votre mot de passe');
       }
     }).catch((err) => {
-      alert.setTitle('Failed');
+      alert.setTitle('Echec');
       alert.setSubTitle(err);
     })
   }

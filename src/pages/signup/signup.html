@@ -14,7 +14,7 @@
 <ion-content class="background">
   <ion-card>
     <ion-card-header>
-      Signup
+      S'inscrire
     </ion-card-header>
     <ion-card-content>
       <ion-list>
@@ -22,13 +22,13 @@
           <ion-input type="email" placeholder="Email" [(ngModel)]="newuser.email"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-input type="password" placeholder="Password" [(ngModel)]="newuser.password"></ion-input>
+          <ion-input type="password" placeholder="Mot de passe" [(ngModel)]="newuser.password"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-input type="text" placeholder="Nick Name" [(ngModel)]="newuser.displayName"></ion-input>
+          <ion-input type="text" placeholder="Pseudo" [(ngModel)]="newuser.displayName"></ion-input>
         </ion-item>
-        <button ion-button block round outline color="light" (click)="signup()">Sign Up</button>
-        <button ion-button full clear color="light" (click)="goback()">Go Back</button>
+        <button ion-button block round outline color="light" (click)="signup()">S'inscrire</button>
+        <button ion-button full clear color="light" (click)="goback()">Retour</button>
       </ion-list>
     </ion-card-content>
   </ion-card>

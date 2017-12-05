@@ -18,7 +18,6 @@ export class TabsPage {
   tab2: string = "GroupsPage";
   tab3: string = "ProfilePage";
 
-  constructor() {
-  }
+  constructor(public navCtrl: NavController, public navParams: NavParams) { }
 
 }

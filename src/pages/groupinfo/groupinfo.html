@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar color="hcolor">
-    <ion-title>Group Info</ion-title>
+    <ion-title>Informations sur le groupe</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -16,14 +16,14 @@
 <ion-content>
   <ion-list no-lines>
     <ion-list-header>
-      Group Members
+      Membres du groupe
     </ion-list-header>
     <ion-item *ngFor="let item of groupmembers">
       <ion-avatar item-left>
         <img src="{{item.photoURL}}">
       </ion-avatar>
       <h2>{{item.displayName}}</h2>
-      <p>Member</p>
+      <p>Membre</p>
     </ion-item>
   </ion-list>
 

@@ -42,16 +42,16 @@ export class ProfilePage {
     this.imghandler.uploadimage().then((url: any) => {
       this.userservice.updateimage(url).then((res: any) => {
         if (res.success) {
-          statusalert.setTitle('Updated');
-          statusalert.setSubTitle('Your profile pic has been changed successfully!!');
+          statusalert.setTitle('Actualisé');
+          statusalert.setSubTitle('Votre photo de profil a été modifiée avec succès !!');
           statusalert.present();
           this.zone.run(() => {
           this.avatar = url;
         })  
         }  
       }).catch((err) => {
-          statusalert.setTitle('Failed');
-          statusalert.setSubTitle('Your profile pic was not changed');
+          statusalert.setTitle('Échoué');
+          statusalert.setSubTitle('Votre photo de profil n\'a pas été modifiée');
           statusalert.present();
       })
       })
@@ -62,26 +62,26 @@ export class ProfilePage {
       buttons: ['okay']
     });
     let alert = this.alertCtrl.create({
-      title: 'Edit Nickname',
+      title: 'Éditer votre pseudo',
       inputs: [{
-        name: 'nickname',
-        placeholder: 'Nickname'
+        name: 'pseudo',
+        placeholder: 'Pseudo'
       }],
       buttons: [{
-        text: 'Cancel',
+        text: 'Annuler',
         role: 'cancel',
         handler: data => {
 
         }
       },
       {
-        text: 'Edit',
+        text: 'Éditer',
         handler: data => {
           if (data.nickname) {
             this.userservice.updatedisplayname(data.nickname).then((res: any) => {
               if (res.success) {
-                statusalert.setTitle('Updated');
-                statusalert.setSubTitle('Your nickname has been changed successfully!!');
+                statusalert.setTitle('Actualisé');
+                statusalert.setSubTitle('Votre pseudo a été changé avec succès !!');
                 statusalert.present();
                 this.zone.run(() => {
                   this.displayName = data.nickname;
@@ -89,8 +89,8 @@ export class ProfilePage {
               }
 
               else {
-                statusalert.setTitle('Failed');
-                statusalert.setSubTitle('Your nickname was not changed');
+                statusalert.setTitle('Échoué');
+                statusalert.setSubTitle('Votre pseudo n\'a pas été modifié');
                 statusalert.present();
               }
                              

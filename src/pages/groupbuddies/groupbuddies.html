@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar color="hcolor">
-    <ion-title>Group Buddies</ion-title>
+    <ion-title>Groupe de restochatteurs</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -15,7 +15,7 @@
 
 <ion-content>
   <ion-searchbar [(ngModel)]="searchstring" (input)="searchuser($event)"
-                  placeholder="Search">
+                  placeholder="Recherche">
   </ion-searchbar>
 <ion-list no-lines>
   <ion-item-sliding *ngFor="let key of myfriends">
@@ -28,7 +28,7 @@
     <ion-item-options slide="left">
       <button ion-button color="primary" (click)="addbuddy(key)">
         <ion-icon name="person-add"></ion-icon>
-        Add
+        Ajouter
       </button>
     </ion-item-options>
   </ion-item-sliding>

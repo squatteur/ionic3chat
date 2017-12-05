@@ -14,7 +14,7 @@
 <ion-content class="background">
   <ion-card>
     <ion-card-header>
-      Login
+      Connectez-vous à RestoChat
     </ion-card-header>
     <ion-card-content>
       <ion-list no-lines>
@@ -24,16 +24,16 @@
         </ion-item>
         <div class="spacer" style="height: 5px;"></div>
         <ion-item>
-          <ion-input type="password" placeholder="Password" [(ngModel)]="credentials.password"></ion-input>
+          <ion-input type="password" placeholder="Mot de passe" [(ngModel)]="credentials.password"></ion-input>
         </ion-item>
         <div class="spacer" style="height: 10px;"></div>
-        <a (click)="passwordreset()">Forgot login details ? <b> Get Help </b></a>
+        <a (click)="passwordreset()">Identifiant oublié ? <b> Obtenir de l'aide </b></a>
         <div class="spacer" style="height: 10px;"></div>
-        <button ion-button block round outline color="light" (click)="signin()">Login</button>
+        <button ion-button block round outline color="light" (click)="signin()">Connexion</button>
         <div class="spacer" style="height: 10px;"></div>
-        <p>OR</p>
+        <p>OU</p>
         <div class="spacer" style="height: 10px;"></div>
-        <button ion-button clear full color="light" (click)="signup()">Don't have an account? Sign up</button>
+        <button ion-button clear full color="light" (click)="signup()">Vous n'avez pas encore de compte?</button>
       </ion-list>
     </ion-card-content>
   </ion-card>
