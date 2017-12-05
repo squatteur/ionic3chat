@@ -12,6 +12,11 @@ log.txt
 .vscode/
 npm-debug.log*
 
+config.xml
+ionic.config.json
+package.json
+ressources/
+
 .idea/
 .sass-cache/
 .tmp/
