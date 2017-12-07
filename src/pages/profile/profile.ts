@@ -37,7 +37,7 @@ export class ProfilePage {
 
   editimage() {
     let statusalert = this.alertCtrl.create({
-      buttons: ['okay']
+      buttons: ['ok']
     });
     this.imghandler.uploadimage().then((url: any) => {
       this.userservice.updateimage(url).then((res: any) => {
@@ -59,12 +59,12 @@ export class ProfilePage {
 
   editname() {
     let statusalert = this.alertCtrl.create({
-      buttons: ['okay']
+      buttons: ['ok']
     });
     let alert = this.alertCtrl.create({
       title: 'Éditer votre pseudo',
       inputs: [{
-        name: 'pseudo',
+        name: 'nickname',
         placeholder: 'Pseudo'
       }],
       buttons: [{
@@ -77,6 +77,7 @@ export class ProfilePage {
       {
         text: 'Éditer',
         handler: data => {
+          
           if (data.nickname) {
             this.userservice.updatedisplayname(data.nickname).then((res: any) => {
               if (res.success) {
