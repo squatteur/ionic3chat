@@ -47,10 +47,10 @@ export class GroupchatPage {
         var month = d.getMonth();
         var da = d.getDate();
 
-        var monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
-          "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+        var monthNames = ["Jan", "Fév", "Mar", "Avr", "Mai", "Juin",
+          "Juil", "Aou", "Sep", "Oct", "Nov", "Déc"];
         
-        var formattedTime = monthNames[month] + "-" + da + "-" + hours + ":" + minutes.substr(-2);
+        var formattedTime = da + " " + monthNames[month] + " à " + hours + ":" + minutes.substr(-2);
 
         this.allgroupmsgs[key].timestamp = formattedTime;
         if (this.allgroupmsgs[key].message.substring(0, 4) === 'http') {

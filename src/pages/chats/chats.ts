@@ -52,7 +52,7 @@ export class ChatsPage {
       let newalert = this.alertCtrl.create({
         title: 'Ami ajouté',
         subTitle: 'Appuyez sur l\'ami pour discuter avec lui',
-        buttons: ['Okay']
+        buttons: ['Ok']
       });
       newalert.present();
     })
