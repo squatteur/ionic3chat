@@ -25,6 +25,9 @@
           <ion-input type="password" placeholder="Mot de passe" [(ngModel)]="newuser.password"></ion-input>
         </ion-item>
         <ion-item>
+          <ion-input type="password" placeholder="Répétez le mot de passe" [(ngModel)]="newuser.password2"></ion-input>
+        </ion-item>
+        <ion-item>
           <ion-input type="text" placeholder="Pseudo" [(ngModel)]="newuser.displayName"></ion-input>
         </ion-item>
         <button ion-button block round outline color="light" (click)="signup()">S'inscrire</button>

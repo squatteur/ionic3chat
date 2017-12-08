@@ -16,6 +16,7 @@ export class SignupPage {
   newuser = {
     email: '',
     password: '',
+    password2: '',
     displayName: ''
   }
   constructor(public navCtrl: NavController, public navParams: NavParams, public userservice: UserProvider,
@@ -27,17 +28,25 @@ export class SignupPage {
       duration: 3000,
       position: 'bottom'
     });
-    if (this.newuser.email == '' || this.newuser.password == '' || this.newuser.displayName == '') {
-      toaster.setMessage('All fields are required dude');
+    if (this.newuser.email == '' || this.newuser.password == '' || this.newuser.password2 == '' || this.newuser.displayName == '') {
+      toaster.setMessage('Tous les champs sont requis.');
       toaster.present();
     }
     else if (this.newuser.password.length < 7) {
-      toaster.setMessage('Password is not strong. Try giving more than six characters');
+      toaster.setMessage('Le mot de passe n\'est pas fort. Il faut au moins 6 caractères.');
+      toaster.present();
+    }
+    else if (this.newuser.password != this.newuser.password2) {
+      toaster.setMessage('Les mots de passe doivent être identiques.');
+      toaster.present();
+    }
+    else if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(this.newuser.email))) {
+      toaster.setMessage('L\'email n\'est pas correct.');
       toaster.present();
     }
     else {
       let loader = this.loadingCtrl.create({
-        content: 'Please wait'
+        content: 'S\'il vous plaît, attentez'
       });
       loader.present();
       this.userservice.adduser(this.newuser).then((res: any) => {
@@ -45,7 +54,7 @@ export class SignupPage {
         if (res.success)
           this.navCtrl.push('ProfilepicPage');
         else
-          alert('Error' + res);
+          alert('Erreur' + res);
       })
     }
   }  
