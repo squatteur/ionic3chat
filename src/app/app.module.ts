@@ -6,6 +6,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { File } from '@ionic-native/file';
 import { FileChooser } from '@ionic-native/file-chooser';
 import { FilePath } from '@ionic-native/file-path';
+import { IonicStorageModule } from '@ionic/storage';
 
 import { config } from './app.firebaseconfig';
 
@@ -19,6 +20,7 @@ import { ImghandlerProvider } from '../providers/imghandler/imghandler';
 import { RequestsProvider } from '../providers/requests/requests';
 import { ChatProvider } from '../providers/chat/chat';
 import { GroupsProvider } from '../providers/groups/groups';
+//import { Push } from '@ionic-native/push';
 
 
 @NgModule({
@@ -28,7 +30,8 @@ import { GroupsProvider } from '../providers/groups/groups';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp, {tabsPlacement: 'top'}),
-    AngularFireModule.initializeApp(config)
+    AngularFireModule.initializeApp(config),
+    IonicStorageModule.forRoot(),
   ],
   bootstrap: [IonicApp],
   entryComponents: [

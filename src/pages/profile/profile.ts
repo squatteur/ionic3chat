@@ -2,6 +2,7 @@ import { Component, NgZone } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { ImghandlerProvider } from '../../providers/imghandler/imghandler';
 import { UserProvider } from '../../providers/user/user';
+import { Storage } from '@ionic/storage';
 import firebase from 'firebase';
 /**
  * Generated class for the ProfilePage page.
@@ -19,7 +20,7 @@ export class ProfilePage {
   displayName: string;
   constructor(public navCtrl: NavController, public navParams: NavParams,
     public userservice: UserProvider, public zone: NgZone, public alertCtrl: AlertController,
-    public imghandler: ImghandlerProvider) {
+    public imghandler: ImghandlerProvider, public storage: Storage) {
   }
 
   ionViewWillEnter() {
@@ -106,7 +107,18 @@ export class ProfilePage {
 
   logout() {
     firebase.auth().signOut().then(() => {
-      this.navCtrl.parent.parent.setRoot('LoginPage');
+      this.storage.remove(`setting:login`).then(() => {
+        this.storage.remove(`setting:pass`).then(() => {
+          this.storage.get(`setting:login`).then((login) => {
+            console.log('login :' + login);
+          });
+          
+          this.navCtrl.parent.parent.setRoot('LoginPage');
+        });
+      });
+
+
+
     })
   }
 
