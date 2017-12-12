@@ -31,14 +31,14 @@ export class NewgroupPage {
   chooseimage() {
     if (this.newgroup.groupName == 'GroupName') {
       let namealert = this.alertCtrl.create({
-        buttons: ['okay'],
-        message: 'Please enter the groupname first. Thanks'
+        buttons: ['ok'],
+        message: 'S\'il vous plaît saisissez votre nom de groupe en premier. Merci'
       });
       namealert.present();
     }
     else {
       let loader = this.loadingCtrl.create({
-        content: 'Loading, please wait..'
+        content: 'Chargement, s\'il vous plaît, attendez.'
       });
       loader.present();
       this.imghandler.grouppicstore(this.newgroup.groupName).then((res: any) => {
@@ -62,20 +62,20 @@ export class NewgroupPage {
 
   editgroupname() {
     let alert = this.alertCtrl.create({
-      title: 'Edit Group Name',
+      title: 'Editer le nom de groupe',
       inputs: [{
         name: 'groupname',
-        placeholder: 'Give a new groupname'
+        placeholder: 'Donnez un nom de groupe'
       }],
       buttons: [{
-        text: 'Cancel',
+        text: 'Annuler',
         role: 'cancel',
         handler: data => {
 
         }
       },
       {
-        text: 'Set',
+        text: 'Valider',
         handler: data => {
           if (data.groupname) {
             this.newgroup.groupName = data.groupname
